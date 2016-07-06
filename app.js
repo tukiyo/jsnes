@@ -6,6 +6,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var config = require('./config.json');
 
+console.log(config.channelId);
 const channelId = config.channelId;
 const username = config.username;
 const password = config.password;
