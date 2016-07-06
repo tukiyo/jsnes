@@ -3,6 +3,7 @@ JSNES
 
 A JavaScript NES emulator.
 
+Note: this fork is heavily modified for use with [Beam.pro Interactive Streams](https://beam.pro)
 Build
 -----
 
