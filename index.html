@@ -54,6 +54,13 @@
          padding: 5px; /* If you add too much padding here, the options won't show in IE */
          width: 268px;
       }
+      #buttons {
+        font-family: uniSans;
+        font-size: 200%;
+        margin-right: 300px;
+        margin-top: 5em;
+        color: #777;
+      }
     </style>
 </head>
 
@@ -62,8 +69,17 @@
     <iframe src="contribs.html"></iframe>
     <div class="center">
       <h1>NES Interactive Stream</h1>
-
       <div id="emulator"></div>
+    </div>
+    <div id="buttons">
+      <div id="showbutton-a">A</div>
+      <div id="showbutton-b">B</div>
+      <div id="showbutton-up">UP</div>
+      <div id="showbutton-down">DOWN</div>
+      <div id="showbutton-left">LEFT</div>
+      <div id="showbutton-right">RIGHT</div>
+      <div id="showbutton-start">START</div>
+      <div id="showbutton-select">SELECT</div>
     </div>
   </div>
     <script src="webaudio.js"></script>
