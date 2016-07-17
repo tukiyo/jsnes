@@ -178,9 +178,6 @@ if (typeof jQuery !== 'undefined') {
                 /*
                  * Sound
                  */
-                self.dynamicaudio = new DynamicAudio({
-                    swf: nes.opts.swfPath+'dynamicaudio.swf'
-                });
                 self.webaudio = new WebAudio();
             };
 
@@ -284,7 +281,6 @@ if (typeof jQuery !== 'undefined') {
                 },
 
                 writeAudio: function(sample) {
-                    //return this.dynamicaudio.writeInt(samples);
                     this.webaudio.writeStereo(sample, sample);
                 },
 
