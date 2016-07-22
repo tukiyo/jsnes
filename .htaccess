@@ -1,0 +1,10 @@
+AuthType Digest
+AuthName "Secret Zone"
+AuthUserFile /opt/htdigest
+Require valid-user
+
+Satisfy any
+
+order deny,allow
+#allow from 192.168.0.9
+deny from all

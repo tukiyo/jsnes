@@ -44,15 +44,15 @@ JSNES.Keyboard = function() {
 JSNES.Keyboard.prototype = {
     setKey: function(key, value) {
         switch (key) {
-            case 88: this.state1[this.keys.KEY_A] = value; break;      // X
-            case 89: this.state1[this.keys.KEY_B] = value; break;      // Y (Central European keyboard)
-            case 90: this.state1[this.keys.KEY_B] = value; break;      // Z
-            case 17: this.state1[this.keys.KEY_SELECT] = value; break; // Right Ctrl
+            case 75: this.state1[this.keys.KEY_A] = value; break;      // K
+            case 74: this.state1[this.keys.KEY_B] = value; break;      // J
+            case 190: this.state1[this.keys.KEY_SELECT] = value; break; // .
+            case 188: this.state1[this.keys.KEY_START] = value; break;  // ,
             case 13: this.state1[this.keys.KEY_START] = value; break;  // Enter
-            case 38: this.state1[this.keys.KEY_UP] = value; break;     // Up
-            case 40: this.state1[this.keys.KEY_DOWN] = value; break;   // Down
-            case 37: this.state1[this.keys.KEY_LEFT] = value; break;   // Left
-            case 39: this.state1[this.keys.KEY_RIGHT] = value; break;  // Right
+            case 69: this.state1[this.keys.KEY_UP] = value; break;     // e
+            case 68: this.state1[this.keys.KEY_DOWN] = value; break;   // d
+            case 83: this.state1[this.keys.KEY_LEFT] = value; break;   // s
+            case 70: this.state1[this.keys.KEY_RIGHT] = value; break;  // f
 
             case 103: this.state2[this.keys.KEY_A] = value; break;     // Num-7
             case 105: this.state2[this.keys.KEY_B] = value; break;     // Num-9

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>JSNES: A JavaScript NES emulator</title>
+    <title>untitled</title>
     <style>
       @font-face {
         font-family: uniSans;
@@ -18,9 +18,9 @@
         margin: 0 auto;
       }
       body{
-        background-color: #000;
+        background-color: #ddd;
         color: #fff;
-        margin: 0px;
+        margin: 0;
       }
       iframe{
         width:200px;
@@ -66,11 +66,12 @@
 
 <body>
   <div id="parent">
-    <iframe src="contribs.html"></iframe>
+<!-- <iframe src="contribs.html"></iframe> -->
     <div class="center">
-      <h1>NES Interactive Stream</h1>
+      <!--<h1>NES Interactive Stream</h1> -->
       <div id="emulator"></div>
     </div>
+<!--
     <div id="buttons">
       <div id="showbutton-a">A</div>
       <div id="showbutton-b">B</div>
@@ -81,6 +82,7 @@
       <div id="showbutton-start">START</div>
       <div id="showbutton-select">SELECT</div>
     </div>
+-->
   </div>
     <script src="lib/webaudio.js"></script>
     <script src="lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -100,35 +102,12 @@
         $(function() {
             nes = new JSNES({
                 'ui': $('#emulator').JSNESUI({
-                    "Homebrew": [
-                        ['Concentration Room', 'roms/croom/croom.nes'],
-                        ['LJ65', 'roms/lj65/lj65.nes'],
+                    "checking": [
+			    <?php rom_list('roms/'); ?>
                     ],
-                    "Working": [
-                        ['Bubble Bobble', 'local-roms/Bubble Bobble (U).nes'],
-
-                        ['Contra', 'local-roms/Contra (U) [!].nes'],
-                        ['Donkey Kong', 'local-roms/Donkey Kong (JU).nes'],
-                        ['Dr. Mario', 'local-roms/Dr. Mario (JU).nes'],
-                        ['Golf', 'local-roms/Golf (JU).nes'],
-                        ['The Legend of Zelda', 'local-roms/Legend of Zelda, The (U) (PRG1).nes'],
-                        ['Lemmings', 'local-roms/Lemmings (U).nes'],
-                        ['Lifeforce', 'local-roms/Lifeforce (U).nes'],
-
-                        ['Mario Bros.', 'local-roms/Mario Bros. (JU) [!].nes'],
-                        ['Mega Man', 'local-roms/Mega Man (U).nes'],
-                        ['Pac-Man', 'local-roms/Pac-Man (U) [!].nes'],
-                        ['Super Mario Bros.', 'local-roms/Super Mario Bros. (JU) (PRG0) [!].nes'],
-                        ['Tennis', 'local-roms/Tennis (JU) [!].nes'],
-                        ['Tetris', 'local-roms/Tetris (U) [!].nes'],
-                        ['Tetris 2', 'local-roms/Tetris 2 (U) [!].nes'],
-                        ['Zelda II - The Adventure of Link', 'local-roms/Zelda II - The Adventure of Link (U).nes']
+                    "favorite": [
+			    <?php rom_list('roms/favorite/'); ?>
                     ],
-
-                    "Nearly Working": [
-                        ['Duck Hunt', 'local-roms/Duck Hunt (World).nes'],
-                        ['Super Mario Bros. 3', 'local-roms/Super Mario Bros. 3 (U) (PRG1) [!].nes']
-                    ]
                 })
             });
         });
@@ -137,5 +116,15 @@
         <script type="text/vbscript" src="source/jsnes-ie-hacks.vbscript"></script>
     <![endif]-->
 
+<?php
+function rom_list($path = 'roms/temp/') {
+	foreach (scandir($path) as $key=>$val) {
+		if (substr($val,-3) != "nes") continue;
+		$val = str_replace("'","\'",$val);
+		echo sprintf("['%s', '%s'],", $val, $path.$val);
+	}
+}
+
+?>
 </body>
 </html>
